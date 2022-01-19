@@ -678,6 +678,10 @@ body {
   display: table;
   overflow: hidden;
   opacity: 0;
+  -webkit-transform: translate(-50%, -50%) scale(0.25);
+          transform: translate(-50%, -50%) scale(0.25);
+  -webkit-transition: all .4s .2s;
+  transition: all .4s .2s;
 }
 
 .popup__left {
@@ -721,8 +725,8 @@ body {
 
 .popup:target .popup__content {
   opacity: 1;
-  -webkit-transform: translate(-50%, -50%) scale(0.5);
-          transform: translate(-50%, -50%) scale(0.5);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
 }
 
 .popup__close:link, .popup__close:visited {
@@ -1142,5 +1146,9 @@ body {
 .book__form {
   width: 50%;
   padding: 6rem;
+}
+
+body {
+  overflow-y: scroll;
 }
 /*# sourceMappingURL=main.css.map */

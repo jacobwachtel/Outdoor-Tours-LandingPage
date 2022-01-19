@@ -8,9 +8,7 @@
     z-index: 9999;
     opacity: 0;
     visibility: hidden;
-    transition: ease-in .2s;
-
-    
+    transition: ease-in .2s;    
 
     &__content {
         @include absCenter;
@@ -22,7 +20,8 @@
         display: table;
         overflow: hidden;
         opacity: 0;
-        
+        transform: translate(-50%, -50%) scale(.25);
+        transition: all .4s .2s;
     }
 
     &__left {
@@ -62,6 +61,8 @@
         hyphens: auto;
     }
 
+
+    // OPEN STATES 
     &:target {
         opacity: 1;
         visibility: visible;
@@ -69,7 +70,7 @@
 
     &:target &__content {
         opacity: 1;
-        transform: translate(-50%, -50%) scale(.5);
+        transform: translate(-50%, -50%) scale(1);
     }
 
     &__close {
