@@ -824,7 +824,11 @@ body {
 
 .footer__logo-box {
   text-align: center;
-  margin-bottom: 8rem;
+  margin-bottom: 6rem;
+}
+
+.footer__logo-box img {
+  height: 13rem;
 }
 
 .footer__navigation {
@@ -882,12 +886,12 @@ body {
 
 .header__logo-box {
   position: absolute;
-  top: 4rem;
-  left: 4rem;
+  top: 5rem;
+  left: 5rem;
 }
 
 .header__logo {
-  height: 3.5rem;
+  height: 10rem;
 }
 
 .header__text-box {
