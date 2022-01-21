@@ -1,4 +1,18 @@
 /*
+0-600px    :     phone
+600-900px  :     tablet portrait
+900-1200px :     tablet landscape
+[1200-1800]:     is normal styles - desktop
+1800 +     :     big desktop
+
+
+$breakpoint argument choices: 
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/
+/*
 COLORS:
 
 Light green: #7ed56f rgba(126, 213, 111, 1)
@@ -19,9 +33,34 @@ html {
   font-size: 62.5%;
 }
 
+@media (max-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+
 body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  padding: 3rem;
+}
+
+@media (max-width: 56.25em) {
+  body {
+    padding: 0;
+  }
 }
 
 @-webkit-keyframes moveInLeft {
@@ -123,7 +162,6 @@ body {
   font-weight: 400;
   line-height: 1.7;
   color: #5a5a5a;
-  padding: 3rem;
 }
 
 .heading-primary {
@@ -143,6 +181,13 @@ body {
           animation: moveInLeft ease-out 1s;
 }
 
+@media (max-width: 37.5em) {
+  .heading-primary--main {
+    letter-spacing: 1rem;
+    font-size: 5rem;
+  }
+}
+
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
@@ -150,6 +195,12 @@ body {
   letter-spacing: 1.75rem;
   -webkit-animation: moveInRight ease-out 1s;
           animation: moveInRight ease-out 1s;
+}
+
+@media (max-width: 37.5em) {
+  .heading-primary--sub {
+    letter-spacing: .5rem;
+  }
 }
 
 .heading-secondary {
@@ -165,6 +216,18 @@ body {
   letter-spacing: 2px;
   -webkit-transition: all .2s;
   transition: all .2s;
+}
+
+@media (max-width: 56.25em) {
+  .heading-secondary {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .heading-secondary {
+    font-size: 2.5rem;
+  }
 }
 
 .heading-secondary:hover {
@@ -822,6 +885,12 @@ body {
   color: #f7f7f7;
 }
 
+@media (max-width: 56.25em) {
+  .footer {
+    padding: 8rem 0;
+  }
+}
+
 .footer__logo-box {
   text-align: center;
   margin-bottom: 6rem;
@@ -835,6 +904,13 @@ body {
   border-top: 1px solid #5a5a5a;
   padding-top: 2rem;
   display: inline-block;
+}
+
+@media (max-width: 56.25em) {
+  .footer__navigation {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .footer__list {
@@ -873,6 +949,14 @@ body {
   float: right;
 }
 
+@media (max-width: 56.25em) {
+  .footer__copywrite {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+}
+
 .header {
   height: 95vh;
   background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.8)), to(rgba(40, 180, 133, 0.8))), url(../img/hero.jpg);
@@ -884,6 +968,13 @@ body {
   position: relative;
 }
 
+@media (max-width: 37.5em) {
+  .header {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+}
+
 .header__logo-box {
   position: absolute;
   top: 5rem;
@@ -891,7 +982,7 @@ body {
 }
 
 .header__logo {
-  height: 10rem;
+  height: 5rem;
 }
 
 .header__text-box {
@@ -912,6 +1003,19 @@ body {
   margin-bottom: 8rem;
 }
 
+@media (max-width: 56.25em) {
+  .row:not(:last-child) {
+    margin-bottom: 6rem;
+  }
+}
+
+@media (max-width: 56.25em) {
+  .row {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+}
+
 .row::after {
   content: "";
   display: table;
@@ -924,6 +1028,19 @@ body {
 
 .row [class^="col-"]:not(:last-child) {
   margin-right: 6rem;
+}
+
+@media (max-width: 56.25em) {
+  .row [class^="col-"]:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 6rem;
+  }
+}
+
+@media (max-width: 56.25em) {
+  .row [class^="col-"] {
+    width: 100% !important;
+  }
 }
 
 .row .col-1-of-2 {
@@ -969,6 +1086,20 @@ body {
   cursor: pointer;
 }
 
+@media (max-width: 56.25em) {
+  .navigation__button {
+    top: 4rem;
+    right: 4rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .navigation__button {
+    top: 3rem;
+    right: 3rem;
+  }
+}
+
 .navigation__background {
   height: 6rem;
   width: 6rem;
@@ -982,6 +1113,20 @@ body {
   transition: -webkit-transform 0.5s cubic-bezier(0.83, 0, 0.17, 1);
   transition: transform 0.5s cubic-bezier(0.83, 0, 0.17, 1);
   transition: transform 0.5s cubic-bezier(0.83, 0, 0.17, 1), -webkit-transform 0.5s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+@media (max-width: 56.25em) {
+  .navigation__background {
+    top: 4.5rem;
+    right: 4.5rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .navigation__background {
+    top: 3.5rem;
+    right: 3.5rem;
+  }
 }
 
 .navigation__nav {
